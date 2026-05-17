@@ -1,5 +1,3 @@
-// Daniel Rodriguez - CS003A
-// In-Class Lab (Cards Lab)
 #include "Font.h"
 
 sf::Font Font::font;

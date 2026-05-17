@@ -1,5 +1,3 @@
-// Daniel Rodriguez - CS003A
-// In-Class Lab (Cards Lab)
 #ifndef SFML_TEMPLATE_FONT_H
 #define SFML_TEMPLATE_FONT_H
 #include <SFML/Graphics.hpp>

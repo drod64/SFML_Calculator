@@ -14,13 +14,15 @@ else ()
     add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 endif ()
 
-set(SFML_ROOT C:/SFML-2.5.1)
+set(SFML_ROOT ${CMAKE_SOURCE_DIR}/external/SFML-2.5.1)
 set(SFML_STATIC_LIBRARIES TRUE)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
-#set(SFML_DIR C:/SFML/SFML-2.5.1/lib/cmake/SFML)
-find_package(SFML  REQUIRED COMPONENTS audio graphics window system)
+
+find_package(SFML REQUIRED COMPONENTS audio graphics window system)
 if (SFML_FOUND)
-    include_directories(${SFML_INCLUDE_DIR})
-    target_link_libraries(${PROJECT_NAME} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+target_include_directories(${PROJECT_NAME} 
+PUBLIC ${SFML_INCLUDE_DIR}
+PUBLIC include)
+target_link_libraries(${PROJECT_NAME} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
 endif ()
